@@ -357,12 +357,21 @@ header .btn {
 .footer-section p, 
 .footer-section li {
   font-size: var(--font-size);
-  line-height: 1.6;
+  line-height: 2;
   font-family: var(--font-family-2);
 }
 
 .footer-section ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-section li::after{
+  bottom: -2px;
+}
+.footer-section li:hover::after{
+  width: 50%;
 }
 
 .footer-section a {
