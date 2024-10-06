@@ -7,6 +7,10 @@
   font-family: "Montreal";
   src: url(Montreal.ttf);
 }
+@font-face {
+  font-family: "Mid";
+  src: url(Mid.ttf);
+}
 
 * {
   margin: 0;
@@ -23,7 +27,7 @@
   --link-size: 1.5rem;
   --heading-size: 6rem;
   --font-family: "Vogue";
-  --font-family-2: "Montreal";
+  --font-family-2: "Mid";
 }
 
 html,
@@ -40,14 +44,21 @@ body {
   font-size: var(--link-size);
   border: none;
   outline: none;
-  background-color: #1A2A3A; /* A darkish blue color */
+  background-color: #1a1e23; /* A darkish blue color */
   color: white;
-  font-weight: 400;
+  font-weight: 600;
   padding: 10px 20px;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 1px;
   border-radius: 10px;
+  transition: background-color 0.4s ease;
   cursor: pointer;
+  font-family: var(--font-family-2);
+}
+.btn:hover{
+  transition: background-color 0.2s ease;
+  background-color: #111722;
 }
 p {
   font-size: var(--font-size);
@@ -69,7 +80,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 header::after {
@@ -82,8 +93,13 @@ header::after {
   background: linear-gradient(to bottom, black 30%, transparent);
 }
 .logo {
-  font-size: var(--font-size);
+  height: 30px;
+  cursor: pointer;
   z-index: 1000;
+}
+.logo .img{
+  filter: invert(100%);
+  object-fit: contain;
 }
 
 nav ul {
@@ -97,6 +113,23 @@ ul li {
   cursor: pointer;
   letter-spacing: 1px;
   z-index: 1000;
+  font-family: var(--font-family-2);
+  text-transform: uppercase;
+  position: relative;
+}
+li::after{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 0.5px;
+  width: 0%;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+li:hover::after{
+  width: 100%;
+  transition: width 0.3s ease;
 }
 header .btn {
   z-index: 1000;
@@ -336,6 +369,9 @@ header .btn {
   text-decoration: none;
   font-size: var(--font-size);
   color: #ffffff;
+  text-transform: uppercase;
+  font-family: var(--font-family-2);
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
